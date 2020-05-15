@@ -1,0 +1,12 @@
+{
+	"default": {
+		"git": "C:\\Program Files\\Git\\bin\\git.exe",
+		"bash": "C:\\Program Files\\Git\\bin\\bash.exe",
+		"sh": "C:\\Program Files\\Git\\bin\\sh.exe",
+	},
+	"wsl": {
+		"git": ".\\bin\\wslgit.exe",
+		"bash": "C:\\Windows\\System32\\bash.exe",
+		"sh": "C:\\Windows\\System32\\bash.exe",
+	}
+}
