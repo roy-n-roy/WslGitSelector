@@ -28,7 +28,7 @@ WslGitSwitcher\
  `- sh.exe (optional)
 ```
 
-# Usage
+## Usage
 
 展開したフォルダへPATHを通します。
 または、GUI GitクライアントでGItインスタンスに指定します。
@@ -39,3 +39,10 @@ WslGitSwitcher\
 	=> `wslgit.exe`を実行  
 * その他(Cドライブなど)の場合  
 	=> Git for windowsを実行
+
+## Why switch git instances?
+
+主にファイルシステムの扱いの違いから、gitを切り替えて使用しています。  
+
+* Git for Windowsでは、WSL内のパーミッション情報を扱えない  
+* WSLで実行されるgitでは、Windowsのシンボリックリンクを扱えない  
