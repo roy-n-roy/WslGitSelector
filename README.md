@@ -1,6 +1,8 @@
 
 # WslGitSwitcher
 
+![demo](docs/images/demo.gif)  
+
 Windows上のGitリポジトリ と WSL(Linux)上のリポジトリで、Gitインスタンスを自動的に切り替えて実行します。  
 渡された引数は、そのままGit for Windows/wslgitへ渡されます。
 
