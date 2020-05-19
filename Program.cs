@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
-namespace WslGitSwitcher {
+namespace WslGitSelector {
     class Program {
         static int Main(string[] args) {
             char dirSep = Path.DirectorySeparatorChar;

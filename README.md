@@ -1,5 +1,5 @@
 
-# WslGitSwitcher
+# WslGitSelector
 
 ![demo](docs/images/demo.gif)  
 
@@ -13,14 +13,14 @@ Windows上のGitリポジトリ と WSL(Linux)上のリポジトリで、Gitイ�
 
 ## Install
 
-1. [Releases](releases/latest)から `WslGitSwitcher-1.0.0.zip` をダウンロードし、任意のフォルダに展開します。  
-1. [Releases - andy-5/wslgit](https://github.com/andy-5/wslgit/releases)から、`wslgit.exe`をダウンロードし、`WslGitSwitcher/bin/`に保存します。  
+1. [Releases](releases/latest)から `WslGitSelector-1.0.0.zip` をダウンロードし、任意のフォルダに展開します。  
+1. [Releases - andy-5/wslgit](https://github.com/andy-5/wslgit/releases)から、`wslgit.exe`をダウンロードし、`WslGitSelector/bin/`に保存します。  
 1. 必要に応じて、`git.exe`をコピーして `bash.exe`, `sh.exe` にリネームします。
 
 インストール後のフォルダ構成は以下のようになります。
 
 ```
-WslGitSwitcher\
+WslGitSelector\
  |- bin\
  |   `- wslgit.exe
  |- git.exe

@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "WslGitSwitcher": {
+    "WslGitSelector": {
       "commandName": "Executable",
       "executablePath": "git.exe",
       "commandLineArgs": "version"
