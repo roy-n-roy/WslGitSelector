@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace WslGitSelector {
     class Program {
@@ -40,7 +41,20 @@ namespace WslGitSelector {
 
             // 呼び出しプロセス情報設定
             procInfo.FileName = execPath;
-            procInfo.Arguments = Environment.CommandLine.Remove(0, Environment.GetCommandLineArgs()[0].Length).TrimStart();
+            char[] cmd = Environment.CommandLine.ToCharArray();
+            int length = Environment.GetCommandLineArgs()[0].Length;
+            if (cmd[0] == '"') {
+                length++;
+            }
+            if (cmd[length] == '"') {
+                length++;
+            }
+            while (cmd[length] == ' ') {
+                length++;
+            }
+
+            procInfo.Arguments = new string(cmd, length, cmd.Length - length);
+                //Environment.CommandLine.Remove(0, del_cnt).TrimStart();
             procInfo.WorkingDirectory = workingDir;
 
             // プロセス実行

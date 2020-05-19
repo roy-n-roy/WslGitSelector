@@ -1,9 +1,26 @@
 {
   "profiles": {
-    "WslGitSelector": {
+    "git_version_in_win": {
       "commandName": "Executable",
-      "executablePath": "git.exe",
+      "executablePath": "$(TargetDir)git.exe",
       "commandLineArgs": "version"
+    },
+    "git_version_in_wsl": {
+      "commandName": "Executable",
+      "executablePath": "$(TargetDir)git.exe",
+      "commandLineArgs": "version",
+      "workingDirectory": "\\\\wsl$\\Ubuntu\\"
+    },
+    "bash_version_in_win": {
+      "commandName": "Executable",
+      "executablePath": "$(TargetDir)bash.exe",
+      "commandLineArgs": "--version"
+    },
+    "bash_version_in_wsl": {
+      "commandName": "Executable",
+      "executablePath": "$(TargetDir)bash.exe",
+      "commandLineArgs": "--version",
+      "workingDirectory": "\\\\wsl$\\Ubuntu\\"
     }
   }
 }
