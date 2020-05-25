@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace WslGitSelector {
     class Program {
@@ -52,9 +53,25 @@ namespace WslGitSelector {
             while (cmd[length] == ' ') {
                 length++;
             }
+            
+            for (int i = length; i < cmd.Length - 8; i++) {
+                if ((
+                        (cmd[i] == ' ' || cmd[i] == '=' || cmd[i] == ':') && (cmd[i + 1] == '"' || cmd[i + 1] == '\'') ||
+                        cmd[i + 1] == ' ' || cmd[i + 1] == '=' || cmd[i + 1] == ':'
+                    ) &&
+                    cmd[i + 2] == '/' && cmd[i + 3] == '/' &&
+                    (cmd[i + 4] == 'W' || cmd[i + 4] == 'w') && 
+                    (cmd[i + 5] == 'S' || cmd[i + 5] == 's') && 
+                    (cmd[i + 6] == 'L' || cmd[i + 6] == 'l') && 
+                    cmd[i + 7] == '$'
+                    ) {
+
+                    cmd[i + 2] = '\\';
+                    cmd[i + 3] = '\\';
+                }
+            }
 
             procInfo.Arguments = new string(cmd, length, cmd.Length - length);
-                //Environment.CommandLine.Remove(0, del_cnt).TrimStart();
             procInfo.WorkingDirectory = workingDir;
 
             // プロセス実行
